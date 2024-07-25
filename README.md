@@ -22,6 +22,8 @@ Open `http://localhost:3000` in your browser.
 
 > If you want to change the Bucket, please modify the `serverless.yml` file, find `local-bucket` and change it to what you want.
 
+> If you want to change the port, please modify the `serverless.yml` file, find `httpPort` and change port to what you want.
+
 ### Local development
 
 Start client with:
