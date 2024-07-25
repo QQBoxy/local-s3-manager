@@ -1,5 +1,7 @@
 # Local S3 Manager
 
+![](screenshot.png)
+
 This project only provides serverless-offline environment for uploading S3 files for development and testing.
 
 ## Usage
