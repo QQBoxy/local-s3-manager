@@ -2,7 +2,7 @@
 
 ![](screenshot.png)
 
-This project only provides serverless-offline environment for uploading S3 files for development and testing.
+This project provides serverless-offline and serverless-s3-local environment for uploading S3 files for development and testing.
 
 ## Usage
 
