@@ -1,0 +1,50 @@
+service: local-s3-manager
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: ap-northeast-2
+  runtime: nodejs18.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - "s3:PutObject"
+          Resource:
+            - "arn:aws:s3:::local-bucket/*"
+        - Effect: Allow
+          Action:
+            - "s3:ListBucket"
+          Resource:
+            - "arn:aws:s3:::local-bucket"
+  environment:
+    S3_Bucket: local-bucket
+
+plugins:
+  - serverless-s3-local
+  - serverless-offline
+  - serverless-plugin-common-excludes
+
+custom:
+  s3:
+    host: localhost
+    port: 4569
+    directory: /tmp
+    allowMismatchedSignatures: true
+    # https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html
+    cors: s3-cors.xml
+
+functions:
+  api:
+    # timeout: 29
+    handler: index.handler
+    events:
+      - httpApi: '*'
+
+resources:
+  Resources:
+    NewResource:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: local-bucket

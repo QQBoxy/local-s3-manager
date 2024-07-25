@@ -1,0 +1,14 @@
+{
+    "name": "Local S3 Manager - apiDoc",
+    "version": "0.0.1",
+    "description": "Local S3 Manager API Document.",
+    "title": "Local S3 Manager - apiDoc",
+    "url": "",
+    "useHostUrlAsSampleUrl": false,
+    "sampleUrl": "",
+    "template": {
+        "forceLanguage": "en",
+        "withCompare": true,
+        "withGenerator": true
+    }
+}
