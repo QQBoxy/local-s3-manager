@@ -26,7 +26,7 @@ if (process.env.IS_OFFLINE) {
       accessKeyId: "S3RVER",
       secretAccessKey: "S3RVER",
     },
-    endpoint: "http://localhost:4569",
+    endpoint: process.env.S3_ENDPOINT || "http://localhost:4569",
   };
 }
 

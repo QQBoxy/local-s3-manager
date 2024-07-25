@@ -20,6 +20,7 @@ provider:
             - "arn:aws:s3:::local-bucket"
   environment:
     S3_Bucket: local-bucket
+    S3_ENDPOINT: http://localhost:4569
 
 plugins:
   - serverless-s3-local
@@ -28,6 +29,7 @@ plugins:
 
 custom:
   serverless-offline:
+    lambdaPort: 3002
     httpPort: 3000
   s3:
     host: localhost
